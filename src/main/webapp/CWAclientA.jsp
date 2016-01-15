@@ -40,21 +40,13 @@
 <!-- NAVBAR
 ================================================== -->
   <body>
-  <div class="container id="main">
-    <div class="navbar-wrapper">
-      <div class="container">
-        <nav class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
+  
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Coupon Web Application</a>
+             <a class="navbar-brand" href="#">Coupon Web Application</a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
+           <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="CWAclientA.jsp">Home</a></li>
 				<li class="dropdown">
@@ -65,32 +57,26 @@
 				</ul>
 				</li>
                 <li><a href="CWACreadcoupon.jsp">Read Coupon</a></li>
-				<li><a href="CWAupdatecoupon.jsp">Update Coupon</a></li>
-				<li><a href="CWAcart.jsp">Shopping Cart</a></li>
+				<li><a href="CWCcart.jsp">Shopping Cart</a></li>
                 <li><a href="CWACvalidatecoupon.jsp">Validate Coupon</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Find Coupon <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Find Coupon by Time</a></li>
-                    <li><a href="#">Find Coupon by Item Name</a></li>
-					<li><a href="#">Find Coupon by whatever</a></li>
+                    <li><a href="CWCfindbytime.jsp">Find Coupon by Time</a></li>
+                    <li><a href="CWCfindforitem.jsp">Find Coupon by Item Name</a></li>
                   </ul>
                 </li>             
-				<li><a href="CWAdelcoupon.jsp">Delete Coupon</a></li>
+				<li><a href="CWAdelcoupon.jsp">Delete Coupon</a></li>   
+			</ul>
 				<ul class="nav navbar-nav navbar-right">
 				<li><a href="CWCsignup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 				<li><a href="CWClogin.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</ul>
-				</ul>
+				
 			</div>        
 		</div>
         </nav>
-      </div>
-    
-	</div>
-
-
-    <!-- Carousel
+      <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -145,7 +131,7 @@
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
-
+<hr class="featurette-divider">
     <div class="container marketing">
 
       <!-- Three columns of text below the carousel -->

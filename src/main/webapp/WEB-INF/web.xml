@@ -95,4 +95,14 @@
     <servlet-name>signup</servlet-name>
     <url-pattern>/signup</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>deleteCouponsServlet</display-name>
+    <servlet-name>deleteCouponsServlet</servlet-name>
+    <servlet-class>couponModel.deleteCouponsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteCouponsServlet</servlet-name>
+    <url-pattern>/deleteCouponsServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

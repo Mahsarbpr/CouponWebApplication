@@ -1,18 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
+<html>
+<head>
+<title>Add Single Coupon</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="css/zebra/default.css" type="text/css">
+  <style>
+	.form-control {display:inline; width:30%;}
+	.labels {display: block}
+	.datepicker {width:100%;}
+	.valid {color: Green}
+	.error {color: red}
+  </style>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
-    <title>Coupon Web Application</title>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -35,12 +42,10 @@
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style.css">
   </head>
 <!-- NAVBAR
 ================================================== -->
   <body>
-  
     <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container-fluid">
             <div class="navbar-header">
@@ -52,7 +57,7 @@
 				<li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Add Coupon <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-				<li><a href="CWAaddcoupon.jsp">Add Single Coupon</a></li>
+				<li class="active"><a href="CWAaddcoupon.jsp">Add Single Coupon</a></li>
 				<li><a href="CWAaddcoupon.jsp">Add Coupon File</a></li>
 				</ul>
 				</li>
@@ -69,35 +74,64 @@
 				<li><a href="CWAdelcoupon.jsp">Delete Coupon</a></li>   
 			</ul>
 				<ul class="nav navbar-nav navbar-right">
-				<li><a href="CWCsignup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-				<li class="active"><a href="CWClogin.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				<li><a href="CWsignup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+				<li><a href="CWlogin.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</ul>
 				
 			</div>        
 		</div>
         </nav>
-        <hr class="featurette-divider">
+	  <hr class="featurette-divider">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3 panel panel-default">
-
-				<h1 class="margin-base-vertical">Login</h1>
-				<form role="form" class="margin-base-vertical" action="LoginS" method="post">
-					<p class="input-group">
-						<span class="input-group-addon"></span>
-						<input type="text" class="form-control input-lg" name="username" id="username" placeholder="Username" />
-					</p>
-					<p class="input-group">
-						<span class="input-group-addon"></span>
-						<input type="text" class="form-control input-lg" name="password" id="password" placeholder="Password" />
-					</p>
-					<p class="text-center">
-						<button type="submit" class="btn btn-success btn-lg">Login</button>
-					</p>
-				</form>
-			</div><!-- //main content -->
-		</div><!-- //row -->
-	</div> <!-- //container -->
-
+		<h2>Coupon Information</h2>
+		<form role="form" id='delsform' name="delsform" action="http://localhost:8080/coupon-webservice/webapi/myresource/DeleteCoupons">
+			<div class="form-group">
+				<label for="vartime1" class='labels'>Delete Coupons before:</label>
+				<input type="text" class="form-control datepicker" id="vartime1" name="vartime1" placeholder="yyyy-mm-dd">
+				<label id="vartime1-error" class="error valid" for="vartime1"></label>
+			</div>
+			<input type="submit" value="Submit!">
+			<!--<button type="submit" class="btn btn-default">Submit</button>-->
+		</form>
+	</div>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/zebra_datepicker.js"></script>
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+	<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('input.datepicker').Zebra_DatePicker({
+				//direction: true
+			});
+			//console.log('hi');
+			$( "#delsform" ).validate({
+				rules: {
+					varID: {
+						required: true,
+						digits: true
+					},
+					varItmid: {
+						required: true,
+						digits: true
+					},
+					vardiscount: {
+						required: true,
+						digits: true
+					},
+					vartype: {
+						required: true,
+						digits: true
+					},
+					vartime1: {
+						required: true
+					},
+					vartime2: {
+						required: true
+					}
+				}
+			});
+		});
+	</script>
 </body>
 </html>

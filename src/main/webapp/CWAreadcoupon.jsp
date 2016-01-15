@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-  <title>Read Coupon</title>
+<html>
+<head>
+<title>Read Coupon information</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
@@ -20,9 +20,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
-    <title>Coupon Web Application</title>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -49,78 +46,66 @@
 <!-- NAVBAR
 ================================================== -->
   <body>
-    <div class="navbar-wrapper">
-      <div class="container">
-
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-          <div class="container">
+       <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Coupon Web Application</a>
+             <a class="navbar-brand" href="#">Coupon Web Application</a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse">
+            <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li><a href="CWAhome.jsp">Home</a></li>
                 <li class="active"><a href="CWAreadcoupon.jsp">Read Coupon</a></li>
+                <li><a href="CWAcart.jsp">Shopping Cart</a></li>
                 <li><a href="CWAvalidatecoupon.jsp">Validate Coupon</a></li>
-                 <li class="dropdown">
+                <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Find Coupon <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Find Coupon by Time</a></li>
-                    <li><a href="#">Find Coupon by Item Name</a></li>
-					<li><a href="#">Find Coupon by whatever</a></li>
+                    <li><a href="CWfindbytime.jsp">Find Coupon by Time</a></li>
+                    <li><a href="CWfindforitem.jsp">Find Coupon by Item Name</a></li>
                   </ul>
-                </li>    
+                </li>             
+			</ul>
 				<ul class="nav navbar-nav navbar-right">
 				<li><a href="CWsignup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 				<li><a href="CWlogin.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</ul>
-              </ul>
-            </div>
-          </div>
+				
+			</div>        
+		</div>
         </nav>
-
-      </div>
-    </div>
-
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
-	    <div class="container marketing">
-  <h2>Coupon Information</h2>
+  <hr class="featurette-divider">
+  <div class="container marketing">
+  <h2>Read Coupon information</h2>
   <form role="form" name="readform" action="ReadCouponS">
     <div class="form-group">
-      <label for="couponID">CouponID:</label>
+      <label for="couponID" class='labels'>CouponID:</label>
       <input type="text" class="form-control" id="ID" name="ID" placeholder="Enter Coupon ID" value="${id}" required>
     </div>
   <button type="submit" class="btn btn-default">Submit</button>
-  <br></br>
-  Coupon Status: <input type="text" class="form-control" id="Cstatus" name="Cstatus" value="${message}">		  
-  <br></br>
-  Item name: <input type="text" class="form-control" id="in" name="in" value="${in}">
-  <br></br>
-  Coupon start time: <input type="text" class="form-control" id="ti1" name="ti1" value="${ti1}">
-  <br></br>
-  Coupon expiration time: <input type="text" class="form-control" id="ti2" name="ti2" value="${ti2}">
+
+	<br></br>
+	<div class="form-group">
+      <label for="Cstatus" class='labels'>Coupon Status:</label>
+  		<input type="text" class="form-control" id="Cstatus" name="Cstatus" value="${message}">	
+  	</div>	  
+ <div class="form-group">
+      <label for="in" class='labels'>Item name:</label>
+  	<input type="text" class="form-control" id="in" name="in" value="${in}">
+  </div>
+  <div class="form-group">
+      <label for="ti1" class='labels'>Coupon Starting date:</label>
+  		<input type="text" class="form-control" id="ti1" name="ti1" value="${ti1}">
+  </div>
+  <div class="form-group">
+      <label for="ti2" class='labels'>Coupon expiration date:</label>
+ 		<input type="text" class="form-control" id="ti2" name="ti2" value="${ti2}">
+  </div>
   </form>
 	</div>
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2015 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
-
-    </div><!-- /.container -->
+ 
   <script>
 $("#readform").validate();
 </script>

@@ -23,24 +23,32 @@
 </head>
 
 <body><!--  style="cursor: auto; overflow-y: scroll;" -->
- <nav class="navbar navbar-inverse navbar-fixed-top">
+   <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container-fluid">
             <div class="navbar-header">
              <a class="navbar-brand" href="#">Coupon Web Application</a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
+           <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="CWAhome.jsp">Home</a></li>
-                <li><a href="CWAreadcoupon.jsp">Read Coupon</a></li>
-                <li class="active"><a href="CWAcart.jsp">Shopping Cart</a></li>
-                <li><a href="CWAvalidatecoupon.jsp">Validate Coupon</a></li>
+                <li><a href="CWAclientA.jsp">Home</a></li>
+				<li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Add Coupon <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+				<li><a href="CWAaddcoupon.jsp">Add Single Coupon</a></li>
+				<li><a href="CWAaddcoupon.jsp">Add Coupon File</a></li>
+				</ul>
+				</li>
+                <li><a href="CWACreadcoupon.jsp">Read Coupon</a></li>
+				<li class="active"><a href="CWCcart.jsp">Shopping Cart</a></li>
+                <li><a href="CWACvalidatecoupon.jsp">Validate Coupon</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Find Coupon <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="CWfindbytime.jsp">Find Coupon by Time</a></li>
-                    <li><a href="CWfindforitem.jsp">Find Coupon by Item Name</a></li>
+                    <li><a href="CWCfindbytime.jsp">Find Coupon by Time</a></li>
+                    <li><a href="CWCfindforitem.jsp">Find Coupon by Item Name</a></li>
                   </ul>
                 </li>             
+				<li><a href="CWAdelcoupon.jsp">Delete Coupon</a></li>   
 			</ul>
 				<ul class="nav navbar-nav navbar-right">
 				<li><a href="CWsignup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

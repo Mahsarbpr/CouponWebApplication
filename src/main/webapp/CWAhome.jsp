@@ -26,63 +26,44 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Custom styles for this template -->
+ <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
   </head>
 <!-- NAVBAR
 ================================================== -->
   <body>
-  <div class="container id="main">
-    <div class="navbar-wrapper">
-      <div class="container">
-        <nav class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Coupon Web Application</a>
+             <a class="navbar-brand" href="#">Coupon Web Application</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="CWAhome.html">Home</a></li>
+                <li class="active"><a href="CWAhome.jsp">Home</a></li>
                 <li><a href="CWAreadcoupon.jsp">Read Coupon</a></li>
+                <li><a href="CWAcart.jsp">Shopping Cart</a></li>
                 <li><a href="CWAvalidatecoupon.jsp">Validate Coupon</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Find Coupon <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Find Coupon by Time</a></li>
-                    <li><a href="#">Find Coupon by Item Name</a></li>
-					<li><a href="#">Find Coupon by whatever</a></li>
+                    <li><a href="CWfindbytime.jsp">Find Coupon by Time</a></li>
+                    <li><a href="CWfindforitem.jsp">Find Coupon by Item Name</a></li>
                   </ul>
                 </li>             
-			
+			</ul>
 				<ul class="nav navbar-nav navbar-right">
 				<li><a href="CWsignup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 				<li><a href="CWlogin.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</ul>
-				</ul>
+				
 			</div>        
 		</div>
         </nav>
-      </div>
     
-	</div>
-
-
     <!-- Carousel
     ================================================== -->
+    <hr class="featurette-divider">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">

@@ -10,18 +10,16 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.coupon.Coupon;
-
 /**
- * Servlet implementation class deleteCouponServlet
+ * Servlet implementation class deleteCouponsServlet
  */
-public class deleteCouponServlet extends HttpServlet {
+public class deleteCouponsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public deleteCouponServlet() {
+    public deleteCouponsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,29 +27,26 @@ public class deleteCouponServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-    
-    
-    //http://websystique.com/springmvc/spring-mvc-4-restful-web-services-crud-example-resttemplate/
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String SID=request.getParameter("ID");
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		String SID=request.getParameter("vartime1");
 		if(SID != null && SID !=""){
 		//int IID= Integer.parseInt(request.getParameter("ID")); //error handling if ID is null, how to?
 	//	PrintWriter out = response.getWriter();//chi kar mikone?
 		Client client= ClientBuilder.newClient();
-		Response Response = client.target("http://localhost:8080/coupon-webservice/webapi/myresource/DeleteCoupon").path(SID).request(MediaType.APPLICATION_JSON).delete();
+		Response Response = client.target("http://localhost:8080/coupon-webservice/webapi/myresource/DeleteCoupons").request(MediaType.APPLICATION_JSON).delete();
 		//if(Response)
 		
-		request.setAttribute("message", "Coupon with "+SID+" id is deleted.");
-		request.getRequestDispatcher("CWAdelcoupon.jsp").forward(request,response);;
+		request.setAttribute("message", "Coupons before "+SID+" are deleted.");
+		request.getRequestDispatcher("CWAdelcoupons.jsp").forward(request,response);;
 		//response.sendRedirect("CWAdelcoupon.jsp");
 		}
 		else {
 	//response.getWriter().write("enter the ID");	
-			response.sendRedirect("CWAdelCoupon.jsp");
+			response.sendRedirect("CWAdelcoupons.jsp");
 	}
 		
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
